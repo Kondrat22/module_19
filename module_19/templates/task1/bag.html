@@ -1,0 +1,24 @@
+{% extends 'task1/menu.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<div class="container">
+        {% block pagename %}
+            <h1>{{ title }}</h1>
+        {% endblock %}
+
+        {% block menu %}
+            {{ block.super }}
+        {% endblock %}
+
+        {% block content %}
+            <h2>Извените, Ваша корзина пуста</h2>
+        {% endblock %}
+</div>
+    <a href="http://127.0.0.1:8000">Вернуться на главную</a>
+</body>
+</html>

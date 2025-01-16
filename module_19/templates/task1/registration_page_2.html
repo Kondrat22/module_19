@@ -1,0 +1,30 @@
+
+{% extends 'task1/menu.html' %}
+
+{% block pagename %}
+    <h1>{{ title }}</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+{% block content %}
+    
+    
+{% if info.error %}
+    <h2>{{ info.error }}</h2>
+{% else %}
+     <h2>{{ info.success }}</h2>
+    
+{% endif %}
+<form method="post">
+    
+    {% csrf_token %}
+    {{ form.as_p }}
+    
+    <button type="submit">Отправить</button>
+    
+</form>
+
+{% endblock %} 

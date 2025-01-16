@@ -1,0 +1,24 @@
+{% extends 'task1/menu.html' %}
+{% block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+{% block pagename %}
+    <h1>{{ title }}</h1>
+{% endblock %}
+
+{% block menu %}
+    {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+    <ul class="markers">
+        {% for game in games %}
+            <li>{{ game }} <button>Купить</button></li>
+        {% endfor %}
+    </ul>
+
+    <a href="http://127.0.0.1:8000">Вернуться на главную</a>
+
+{% endblock %}
